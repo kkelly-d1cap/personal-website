@@ -5,12 +5,13 @@ import { notFound } from 'next/navigation';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import rehypeHighlight from 'rehype-highlight';
 import remarkGfm from 'remark-gfm';
+import type { Pluggable } from 'unified';
 import { useMDXComponents } from '@/mdx-components';
 import { getPosts, type BlogFrontmatter } from '../getPosts';
 
 const postsDirectory = path.join(process.cwd(), 'content/blog');
-const remarkPlugins: any[] = [remarkGfm];
-const rehypePlugins: any[] = [rehypeHighlight];
+const remarkPlugins: Pluggable[] = [remarkGfm as unknown as Pluggable];
+const rehypePlugins: Pluggable[] = [rehypeHighlight as unknown as Pluggable];
 
 export function generateStaticParams() {
   const posts = getPosts();
