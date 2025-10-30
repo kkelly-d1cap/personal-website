@@ -36,8 +36,11 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "**/*.cjs",
+    "**/*.js",
+    "**/*.jsx",
     "**/*.mjs",
+    "**/*.cjs",
+    "**/*.json",
     ".next/types/**/*.ts"
   ],
   "exclude": [
